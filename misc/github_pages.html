@@ -1,16 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
+<meta charset="UTF-8">
 <title>github pagesことはじめ</title>
+<link rel="stylesheet" href="../main.css">
 </head>
 <body>
-<pre>
-<code>
-git clone https://github.com/yonezzzet/yonezzzet.github.io.git
+
+<h1>github pagesことはじめ</h1>
+
+<h2>参考</h2>
+
+<ul>
+  <li><a href="https://pages.github.com">https://pages.github.com</a></li>
+</ul>
+
+<h2>手順</h2>
+
+<p>githubで"username.github.io"という名前で新しいリポジトリを作成する</p>
+
+<pre><code>git clone https://github.com/yonezzzet/yonezzzet.github.io.git
 cd yonezzzet.github.io/
 vim index.html
-git add index.html
+</code></pre>
+
+<p>index.htmlを適当に作成し、保存。</p>
+
+<pre><code>git add index.html
 git commit -m "initial commit"
 git push -u origin master
-</code>
-</pre>
+</code></pre>
+
 </body>
+
+
+<p>http://username.github.io/ がURLになる。</p>
