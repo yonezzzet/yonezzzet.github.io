@@ -15,15 +15,18 @@ form {
 	margin:0;
 }
 
-
+h1{
+	font-size: 2em;
+}
 h2{
+	font-size: large;
 	padding-left: 1em;
 	background-color: #ccccff;
 }
 
 pre{
 	border: 1px solid gray;
-	padding-left: 1em;
+	padding-left: 2em;
 	color: #00FF00;
 	background-color: #000000;
 }
