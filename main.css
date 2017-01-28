@@ -25,10 +25,9 @@ h2{
 }
 
 pre{
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	padding-left: 2em;
-	color: #00FF00;
-	background-color: #000000;
+	color: #006400;
 }
 
 p,dl,ol,ul{
