@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>大学ポートレートのデータをみる</title>
+<link rel="stylesheet" href="../main.css">
+</head>
+<body>
+<h1>h1</h1>
+<pre><code>
+curl http://portal.niad.ac.jp/ptrt/h28.html | sed -n 's/^.*=\"\(.*\.xls\).*$/http:\/\/portal\.niad\.ac\.jp\/ptrt\/\1/p' | wget -i -
+</code></pre>
+</body>
+</html>
