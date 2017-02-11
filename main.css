@@ -2,14 +2,6 @@ body{
   margin: 5%;
 }
 
-
-a {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration:underline;
-}
-
 form {
 	padding : 0;
 	margin:0;
@@ -18,6 +10,7 @@ form {
 h1{
 	font-size: 2em;
 }
+
 h2{
 	font-size: large;
 	padding-left: 1em;
@@ -25,9 +18,15 @@ h2{
 }
 
 pre{
-	/* border: 1px solid gray; */
-	padding-left: 2em;
+	margin-left: 2em;
 	color: #006400;
+  background-color: #eeeeee;
+  white-space: pre-wrap;
+}
+
+code{
+  color: #006400;
+  background-color: #eeeeee;
 }
 
 p,dl,ol,ul{
