@@ -12014,6 +12014,252 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ngram</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span><span class="o">-</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">n</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">lst</span>
+
+<span class="n">str_in</span> <span class="o">=</span> <span class="s2">&quot;I am an NLPer&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ngram</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">str_in</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ngram</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">str_in</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;I &#39;, &#39; a&#39;, &#39;am&#39;, &#39;m &#39;, &#39; a&#39;, &#39;an&#39;, &#39;n &#39;, &#39; N&#39;, &#39;NL&#39;, &#39;LP&#39;, &#39;Pe&#39;, &#39;er&#39;]
+[[&#39;I&#39;, &#39;am&#39;], [&#39;am&#39;, &#39;an&#39;], [&#39;an&#39;, &#39;NLPer&#39;]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="06.-&#38598;&#21512;">06. &#38598;&#21512;<a class="anchor-link" href="#06.-&#38598;&#21512;">&#182;</a></h2><p>"paraparaparadise"と"paragraph"に含まれる文字bi-gramの集合を，それぞれ, XとYとして求め，XとYの和集合，積集合，差集合を求めよ．さらに，'se'というbi-gramがXおよびYに含まれるかどうかを調べよ．</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ngram</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;paraparaparadise&quot;</span><span class="p">))</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ngram</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;paragraph&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X|Y:&quot;</span><span class="p">,</span> <span class="n">X</span> <span class="o">|</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X&amp;Y:&quot;</span><span class="p">,</span> <span class="n">X</span> <span class="o">&amp;</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X-Y:&quot;</span><span class="p">,</span> <span class="n">X</span> <span class="o">-</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y-X:&quot;</span><span class="p">,</span> <span class="n">Y</span> <span class="o">-</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;se&#39; in X:&quot;</span><span class="p">,</span><span class="s1">&#39;se&#39;</span> <span class="ow">in</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;se&#39; in Y:&quot;</span><span class="p">,</span><span class="s1">&#39;se&#39;</span> <span class="ow">in</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>X|Y: {&#39;ar&#39;, &#39;ra&#39;, &#39;is&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;se&#39;, &#39;gr&#39;, &#39;di&#39;, &#39;ad&#39;, &#39;pa&#39;, &#39;ap&#39;}
+X&amp;Y: {&#39;ra&#39;, &#39;ar&#39;, &#39;pa&#39;, &#39;ap&#39;}
+X-Y: {&#39;is&#39;, &#39;ad&#39;, &#39;se&#39;, &#39;di&#39;}
+Y-X: {&#39;ag&#39;, &#39;ph&#39;, &#39;gr&#39;}
+&#39;se&#39; in X: True
+&#39;se&#39; in Y: False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="07.-&#12486;&#12531;&#12503;&#12524;&#12540;&#12488;&#12395;&#12424;&#12427;&#25991;&#29983;&#25104;">07. &#12486;&#12531;&#12503;&#12524;&#12540;&#12488;&#12395;&#12424;&#12427;&#25991;&#29983;&#25104;<a class="anchor-link" href="#07.-&#12486;&#12531;&#12503;&#12524;&#12540;&#12488;&#12395;&#12424;&#12427;&#25991;&#29983;&#25104;">&#182;</a></h2><p>引数x, y, zを受け取り「x時のyはz」という文字列を返す関数を実装せよ．さらに，x=12, y="気温", z=22.4として，実行結果を確認せよ．</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">xyz</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">時の</span><span class="si">{1}</span><span class="s2">は</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+
+<span class="n">xyz</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s2">&quot;気温&quot;</span><span class="p">,</span><span class="mf">22.4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;12時の気温は22.4&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="08.-&#26263;&#21495;&#25991;">08. &#26263;&#21495;&#25991;<a class="anchor-link" href="#08.-&#26263;&#21495;&#25991;">&#182;</a></h2><p>与えられた文字列の各文字を，以下の仕様で変換する関数cipherを実装せよ．</p>
+<p>英小文字ならば(219 - 文字コード)の文字に置換
+その他の文字はそのまま出力
+この関数を用い，英語のメッセージを暗号化・復号化せよ．</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cipher</span><span class="p">(</span><span class="n">str_in</span><span class="p">):</span>
+    <span class="n">str_out</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">str_in</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="o">&lt;=</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+            <span class="n">str_out</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">219</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">str_out</span> <span class="o">+=</span> <span class="n">c</span>
+            
+    <span class="k">return</span> <span class="n">str_out</span>
+
+<span class="n">out1</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">(</span><span class="s2">&quot;I&#39;m a loser baby, so why don&#39;t you kill me?&quot;</span><span class="p">)</span>
+<span class="n">out2</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">(</span><span class="n">out1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I&#39;n z olhvi yzyb, hl dsb wlm&#39;g blf proo nv?
+I&#39;m a loser baby, so why don&#39;t you kill me?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="09.-Typoglycemia">09. Typoglycemia<a class="anchor-link" href="#09.-Typoglycemia">&#182;</a></h2><p>スペースで区切られた単語列に対して，各単語の先頭と末尾の文字は残し，それ以外の文字の順序をランダムに並び替えるプログラムを作成せよ．ただし，長さが４以下の単語は並び替えないこととする．適当な英語の文（例えば"I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."）を与え，その実行結果を確認せよ．</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">str_in</span> <span class="o">=</span> <span class="s2">&quot;I couldn&#39;t believe that I could actually understand what I was reading : the phenomenal power of the human mind .&quot;</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">out_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">str_in</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="n">out_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_list</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I cu&#39;odnlt blvieee that I cloud aactully uetdnasnrd what I was reanidg : the pnonhmeeal pwoer of the haumn mind .
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
