@@ -30,7 +30,7 @@ curl -s http://portal.niad.ac.jp/ptrt/h27.html |
 [readxl](https://cran.r-project.org/web/packages/readxl/index.html)
 を読み込みます。
 
-```
+```R
 library(tidyverse)
 library(readxl)
 ```
