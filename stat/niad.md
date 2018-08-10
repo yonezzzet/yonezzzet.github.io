@@ -45,14 +45,16 @@ library(readxl)
 [ggplot2(奥村晴彦先生)](https://oku.edu.mie-u.ac.jp/~okumura/stat/ggplot2.html)
 ）
 
-<pre><code>old = theme_set(theme_gray(base_family="HiraKakuProN-W3"))
+```R
+old = theme_set(theme_gray(base_family="HiraKakuProN-W3"))
+```
 
 ## Import
 
 
-<p><code>read_excel()</code>を使用します。
+<code>read_excel()</code>を使用します。
 公開されているexcelファイルは一見、見出し行でセル結合をしていて扱いにくそうですが、
-解析しやすいように非表示の見出し行があります。こういう気遣いは助かりますね。</p>
+解析しやすいように非表示の見出し行があります。こういう気遣いは助かりますね。
 
 <pre><code>#(7-A) 学生数
 students = read_excel(path = "2015_07go_a.xls",skip = 4)
