@@ -6,5 +6,6 @@
 
 ## misc
 
-* [github pages事始め](misc/github_pages.html)
+* [github pages事始め](misc/github_pages)
+* [Vim](misc/vim)
 
