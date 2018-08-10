@@ -2,7 +2,7 @@
 
 ## stat
 
-* [大学基本情報データを読む](stat/niad.html)
+* [大学基本情報データを読む](stat/niad)
 
 ## misc
 
