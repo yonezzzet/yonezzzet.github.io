@@ -23,7 +23,23 @@
 
 ### [unimpared.vim](https://github.com/tpope/vim-unimpaired)
 
+移動
+
+`]a` :next とか。
+
+`yow` 'wrap'をトグルする
+
+`yoh` 'hlsearch'をトグルする
+
 ### [nerdtree](https://github.com/scrooloose/nerdtree)
 
-
 `:NERDTree` 開く(`<C-n>`にマッピングしてます)
+
+### [commantary.vim](https://github.com/tpope/vim-commentary)
+
+`gc`オペレータでコメントアウト／アンコメントをトグルする。
+
+`gcc`現在行, `{Visual}gc`
+
+exコマンドでは`:{Range}Commentary`
+
