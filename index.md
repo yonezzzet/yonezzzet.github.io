@@ -9,3 +9,7 @@
 * [github pages事始め](misc/github_pages)
 * [Vim](misc/vim)
 
+## go
+
+* [go code snippet](go/snippet)
+

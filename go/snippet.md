@@ -3,8 +3,6 @@
 
 ## スタック/Stack
 
-<script src="https://gist.github.com/yonezzzet/4ebc9cedb91be0b9a6f84f353a85667e.js"></script>
-
 ```go
 package main
 
@@ -41,6 +39,47 @@ func (s *Stack) pop() (val int, err error) {
 		return
 	} else {
 		return -1, fmt.Errorf("stack is empty")
+	}
+}
+```
+
+## キュー/Queue
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	q := make(Queue, 0)
+	fmt.Println(q)
+	q.enq(10)
+	q.enq(20)
+	fmt.Println(q)
+	for {
+		v, err := q.deq()
+		if err != nil {
+			fmt.Println("end")
+			break
+		}
+		fmt.Println(v)
+	}
+}
+
+type Queue []int
+
+func (q *Queue) enq(val int) {
+	*q = append(*q, val)
+}
+
+func (q *Queue) deq() (val int, err error) {
+	l := len(*q)
+	if l > 0 {
+		val, *q = (*q)[0], (*q)[1:]
+		return
+	} else {
+		err = fmt.Errorf("queue is empty")
+		return
 	}
 }
 ```
