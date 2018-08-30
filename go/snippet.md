@@ -1,6 +1,18 @@
 
 # Go Code Snippet
 
+
+## 標準入力から１行読み込み
+
+```go
+var sc = bufio.NewScanner(os.Stdin)
+
+func nextLine() string {
+	sc.Scan()
+	return sc.Text()
+}
+```
+
 ## スタック/Stack
 
 ```go
@@ -39,6 +51,38 @@ func (s *Stack) pop() (val int, err error) {
 		return
 	} else {
 		return -1, fmt.Errorf("stack is empty")
+	}
+}
+```
+
+## スタック(interface{})
+
+```go
+type Stack []interface{}
+
+func (s *Stack) push(val interface{}) {
+	*s = append(*s, val)
+}
+
+func (s *Stack) peek() (val interface{}, err error) {
+	l := len(*s)
+	if l > 0 {
+		val = (*s)[l-1]
+		return
+	} else {
+		err = fmt.Errorf("stack is empty")
+		return
+	}
+}
+
+func (s *Stack) pop() (val interface{}, err error) {
+	l := len(*s)
+	if l > 0 {
+		*s, val = (*s)[:l-1], (*s)[l-1]
+		return
+	} else {
+		err = fmt.Errorf("stack is empty")
+		return
 	}
 }
 ```
